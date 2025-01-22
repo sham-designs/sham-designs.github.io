@@ -1,3 +1,7 @@
-p{
-    color: aqua;
+body{
+    --base-size:12px;
+    --gutter:cal(3 * var(var(--base-size)));
+    --color-primary:black;
+    --color-secondary:gold;
+    --color-background:white;
 }

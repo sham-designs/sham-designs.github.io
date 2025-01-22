@@ -1,7 +1,37 @@
-body{
+:root{
     --base-size:12px;
     --gutter:cal(3 * var(var(--base-size)));
     --color-primary:black;
     --color-secondary:gold;
-    --color-background:white;
+    --color-background:red;
+}
+
+
+@media (min-width:600px){
+
+:root{
+    --base-size:20px;
+}
+
+}
+
+header{
+    background-color: var(--color-background);
+    padding-block: calc(var(--base-size)*5);
+}
+
+
+section{
+    block-size: 75vh;
+}
+
+footer{
+    --base-size:20px;
+    background-color: var(--color-background);
+    padding-top: var(--base-size);
+    padding-bottom: calc(var(--base-size)*5);
+}
+
+.gutters{
+    padding-inline: var(--gutter);
 }

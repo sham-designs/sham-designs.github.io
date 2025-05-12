@@ -54,14 +54,7 @@ body {
     color: #ddd;
 }
 
-.contact-link {
-    font-family: 'Inter', sans-serif;
-    display: inline-block;
-    margin-top: 2rem;
-    color: white;
-    font-size: 0.9rem;
-    text-decoration: underline;
-}
+
 
 .project-card .meta,
 .project-card .meta-sub {
@@ -76,68 +69,124 @@ body {
     gap: 2rem;
 }
 
-/* .project-card {
-    background: white;
-    padding: 1rem;
-    color: black;
-    border-radius: 8px;
-} */
-
 .project-card {
-    background: #111; /* dark card */
+    background: #111;
     color: white;
     border-radius: 12px;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    padding: 1.5rem 1.5rem;
     border: 1px solid #222;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .project-card:hover {
     background: #1a1a1a;
+    transform: translateY(-2px);
 }
 
-.project-text {
-    max-width: 70%;
-}
-
-.project-title {
+.project-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.95rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
+    font-weight: 600;
 }
 
-.project-meta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.8rem;
-    color: #ccc;
+.project-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+.contact-link {
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    margin-top: 2rem;
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    transition: color 0.25s ease, letter-spacing 0.25s ease;
+    letter-spacing: 0px;
+}
+
+.contact-link:hover{
+    color: #B2A4FF;
+    letter-spacing: 4px;
 }
 
 
-/* Only show project preview on hover then? */
-.project-preview {
-    width: 100px;
-    height: 70px;
-    background: #f1f1f1;
-    border-radius: 4px;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.inline-link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 0.9rem;
+    transition: color 0.25s ease, letter-spacing 0.25s ease;
+    letter-spacing: 0px;
+    position: relative;
 }
 
-.project-card:hover .project-preview {
-    opacity: 1;
+.inline-link:hover {
+    color: #B2A4FF;
+    letter-spacing: 4px;
 }
-
 
 
 
 .footer {
-    text-align: center;
+    text-align: left;
     padding: 2rem;
+    padding-left: 0;
     font-size: 0.8rem;
     color: #888;
 }
+
+
+@media screen and (max-width: 768px) {
+    .layout {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+  
+    .intro {
+      max-width: 100%;
+    }
+  
+    .name {
+      font-size: 8rem;
+      letter-spacing: -5px;
+    }
+  
+    .tagline {
+      font-size: 1rem;
+    }
+  
+    .about {
+      font-size: 0.8rem;
+      margin-top: 3rem;
+    }
+  
+    .contact-link {
+      font-size: 0.85rem;
+    }
+  
+    .projects {
+      margin-top: 2rem;
+    }
+  
+    .project-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .project-text {
+      max-width: 100%;
+    }
+  
+    .project-preview {
+      width: 100%;
+      height: 150px;
+    }
+  }
+  

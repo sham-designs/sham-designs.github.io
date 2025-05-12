@@ -1,37 +1,143 @@
-:root{
-    --base-size:12px;
-    --gutter:cal(3 * var(var(--base-size)));
-    --color-primary:black;
-    --color-secondary:gold;
-    --color-background:red;
+body {
+    margin: 0;
+    background: #1a1a1a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.top-nav a {
+    color: white;
+    margin-left: 2rem;
+    text-decoration: none;
+}
+
+.layout {
+    display: flex;
+    padding: 3rem 2rem;
+    gap: 3rem;
+}
+
+.intro {
+    flex: 1;
+    max-width: 40%;
+}
+
+.name {
+    font-size: 12rem;
+    font-weight: 300; /* explicitly heavy */
+    line-height: 1;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -24px;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-weight: lighter;
+    color: #ccc;
+    letter-spacing: -1px;
+}
+
+.about {
+    margin-top: 5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.contact-link {
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    margin-top: 2rem;
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.project-card .meta,
+.project-card .meta-sub {
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 
-@media (min-width:600px){
-
-:root{
-    --base-size:20px;
+.projects {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
+/* .project-card {
+    background: white;
+    padding: 1rem;
+    color: black;
+    border-radius: 8px;
+} */
+
+.project-card {
+    background: #111; /* dark card */
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #222;
+    transition: background 0.2s ease;
 }
 
-header{
-    background-color: var(--color-background);
-    padding-block: calc(var(--base-size)*5);
+.project-card:hover {
+    background: #1a1a1a;
+}
+
+.project-text {
+    max-width: 70%;
+}
+
+.project-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.project-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: #ccc;
 }
 
 
-section{
-    block-size: 75vh;
+/* Only show project preview on hover then? */
+.project-preview {
+    width: 100px;
+    height: 70px;
+    background: #f1f1f1;
+    border-radius: 4px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-footer{
-    --base-size:20px;
-    background-color: var(--color-background);
-    padding-top: var(--base-size);
-    padding-bottom: calc(var(--base-size)*5);
+.project-card:hover .project-preview {
+    opacity: 1;
 }
 
-.gutters{
-    padding-inline: var(--gutter);
+
+
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #888;
 }
